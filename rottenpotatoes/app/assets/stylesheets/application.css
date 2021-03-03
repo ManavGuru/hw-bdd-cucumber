@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+.hilite {
+  background-color: yellow;
+}
+
+a:hover {
+  color: hotpink;
+}
