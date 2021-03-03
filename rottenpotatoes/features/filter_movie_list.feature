@@ -29,15 +29,11 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to ensure that PG and R movies are visible
   # enter step(s) to ensure that other movies are not visible
   Given I am on the home page
-  When I uncheck the following ratings: G, PG-13
+  When I check the following ratings: PG, R
+  And I uncheck the following ratings: G, PG-13
   And I press "Refresh" button
-  Then I should see the following movies: The Terminator, The Incredibles
-  And I should not see the following movies: Chicken Run, The Help
-
-  When I uncheck the following ratings: G, PG, PG-13
-  And I press "Refresh" button
-  Then I should see the following movies: The Terminator, Amelie
-  And I should not see the following movies: Chicken Run, The Help
+  Then I should see the following movies: The Incredibles, The Terminator, Raiders of the Lost Ark, When Harry Met Sally, Amelie
+  And I should not see the following movies: Chicken Run, The Help, 2001: A Space Odyssey,Chocolat,Aladdin 
 
 Scenario: all ratings selected
   Given I am on the RottenPotatoes home page
